@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "image_url": "https://i.ibb.co/4s3YcNY/wedding.jpg",
+      "service_name": "Weddings",
+      "service_description": "Celebrate love with our exquisite wedding planning services. From intimate ceremonies to grand receptions, we create unforgettable moments that reflect your unique style. Our expert team takes care of every detail, from venue selection and decor to catering and entertainment, ensuring your special day is nothing short of magical.",
+      "price": 49.99
+    },
+    {
+      "id": 2,
+      "image_url": "https://i.ibb.co/xMLVnwH/birthday-celebrations-with-screaming-friends.jpg",
+      "service_name": "Birthday Party",
+      "service_description": "Make every birthday unforgettable with our birthday party planning services. Whether it's a child's themed party, a milestone celebration, or an elegant adult gathering, we bring your vision to life. From creative themes and decor to delicious cakes and entertainment, we create memories that last a lifetime.",
+      "price": 59.99
+    },
+    {
+      "id": 3,
+      "image_url": "https://i.ibb.co/G7WjKRK/anniversary.webp",
+      "service_name": "Anniversaries",
+      "service_description": "Celebrate years of love and commitment with our anniversary party planning. We specialize in crafting romantic and memorable anniversaries, whether it's an intimate dinner for two or a lavish celebration with friends and family. Let us handle the details, so you can focus on each other.",
+      "price": 39.99
+    },
+    {
+      "id": 4,
+      "image_url": "https://i.ibb.co/8zHZfJb/engagement.jpg",
+      "service_name": "Engagement Parties",
+      "service_description": "Kickstart your journey to forever with a stunning engagement party. Our engagement party planning services ensure that your special moment is marked with style and sophistication. From venue selection to proposal ideas and decor, we create the perfect atmosphere to say yes to forever.",
+      "price": 29.99
+    },
+    {
+      "id": 5,
+      "image_url": "https://i.ibb.co/0DQr0xF/retirement.jpg",
+      "service_name": "Retirement Parties",
+      "service_description": "Bid farewell to a well-deserving retiree with our retirement party planning. Whether it's an elegant dinner, a casual gathering, or a themed celebration, we create an atmosphere of joy and nostalgia. Let us honor the retiree's accomplishments with a memorable send-off.",
+      "price": 69.99
+    },
+    {
+      "id": 6,
+      "image_url": "https://i.ibb.co/Zm7h6KZ/baby-Shower.jpg",
+      "service_name": "Baby shower",
+      "service_description": "Welcome the newest member of your family with our baby shower planning services. We design beautiful and fun baby showers that capture the excitement and anticipation of parenthood. From adorable decor to delicious treats and games, we make this momentous occasion a joyous one.",
+      "price": 44.99
+    }
+  ]
+  
