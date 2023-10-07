@@ -3,6 +3,20 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
+
+
+  const { googleSignIn } = useContext(AuthContext);
+  const handleGoogle = () => {
+    googleSignIn()
+    .then((result) => {
+      console.log(result.user);
+    })
+    .catch(error => {
+      console.error(error);
+  })
+  }
+
+
     const {signIn} = useContext(AuthContext);
 
 
@@ -56,11 +70,18 @@ const Login = () => {
         <div className="form-control mt-6">
           <button  className="btn btn-primary bg-blue-500 ">Login</button>
         </div>
+        
       </form>
+      <div className="form-control pl-7 pr-7 pb-7">
+          <button onClick={handleGoogle}  className="btn btn-primary bg-pink-500 ">Google</button>
+        </div>
+     
       <p className="text-center mb-8">Do not have an account? <Link className="font-bold text-blue-700" to='/register'>Register</Link></p>
+      
     </div>
   </div>
 </div>
+
             
         </div>
     );

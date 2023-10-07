@@ -6,11 +6,14 @@ import Gallery from "../pages/Home/Gallery";
 import Login from "../pages/Home/Login";
 import Register from "../pages/Home/Register";
 import PrivateRoute from "./PrivateRoute";
+import Services from "../pages/Home/Services";
+import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
     {
         path:'/',
         element: <Root></Root>,
+        errorElement : <ErrorPage></ErrorPage>,
         children: [
             {
                 path:'/',
@@ -20,12 +23,13 @@ const router = createBrowserRouter([
             },
             {
                 path:'/public/celebrations.json/:id',
-                element: <PrivateRoute><About></About></PrivateRoute>
-
+                element: <PrivateRoute><About></About></PrivateRoute>,
+                
             },
             {
                 path:'/gallery',
-            element:<Gallery></Gallery>
+            element:<Services></Services>,
+            loader: () => fetch('/public/celebrations.json')
             },
             {
                 path:'/login',

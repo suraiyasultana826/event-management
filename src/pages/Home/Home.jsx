@@ -2,6 +2,7 @@ import Header from "./Header";
 import banner from '../../assets/8107880.jpg'
 import { useLoaderData } from "react-router-dom";
 import EventCard from "./EventCard";
+import About from "./About";
 
 
 const Home = () => {
@@ -26,7 +27,11 @@ const Home = () => {
             {/* //news container */}
             {
                 event.map(events => <EventCard key={events.id} event={events}></EventCard>)
+               
+               
             }
+          
+          
          </div>
            
             

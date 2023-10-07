@@ -10,6 +10,7 @@ const EventCard = ({event}) => {
   <div className="card-body">
     <h2 className="card-title">{service_name}</h2>
     <p>{service_description}</p>
+    <p> Price: {price} $</p>
     <div className="card-actions justify-end">
      <Link to = {`/public/celebrations.json/${id}`}> <button className="btn btn-primary">See Details</button></Link>
     </div>

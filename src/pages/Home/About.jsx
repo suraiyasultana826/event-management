@@ -1,16 +1,17 @@
 import { useParams } from "react-router-dom";
+import Services from "./Services";
 
 
-const About = () => {
-    const {id, image_url} = useParams();
+
+const About = ({event}) => {
+    const {id} = useParams();
+    const {image_url, price} = event || {};
     return (
         <div>
-
-           
-            <h1>this is about section</h1>
+            <Services></Services>
             <img src={image_url} alt="" />
-            <p>{id}</p>
-            
+          <p>{id}</p>
+              
         </div>
     );
 };
