@@ -1,9 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
+    
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleRegister = e => {
         e.preventDefault();
         console.log(e.currentTarget);
@@ -17,6 +21,8 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             console.log(result.user)
+            navigate(location?.state ? location.state: '/');
+            toast("Registration Successful!");
         })
         .catch(error => {
             console.error(error)
