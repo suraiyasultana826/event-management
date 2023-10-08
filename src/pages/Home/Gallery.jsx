@@ -1,5 +1,4 @@
 
-import React from 'react';
 
 const Gallery = ({event}) => {
     const {image_url} = event;

@@ -2,8 +2,6 @@ import Header from "./Header";
 import banner from '../../assets/8107880.jpg'
 import { useLoaderData } from "react-router-dom";
 import EventCard from "./EventCard";
-import About from "./About";
-
 
 const Home = () => {
     const event = useLoaderData();
@@ -20,10 +18,12 @@ const Home = () => {
            </div>
            </div>
           </div>
+       
+          
          <div className="flex justify-center mb-20">
          <p className="font-bold text-4xl text-blue-500">OUR SERVICES</p>
          </div>
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 py-10">
+         <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 py-10  ">
             {/* //news container */}
             {
                 event.map(events => <EventCard key={events.id} event={events}></EventCard>)
@@ -33,6 +33,7 @@ const Home = () => {
           
           
          </div>
+        
            
             
         </div>

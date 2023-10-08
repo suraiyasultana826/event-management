@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 const EventCard = ({event}) => {
     const {service_name, id, image_url, service_description, price  } = event;
     return (
-       <div className="flex ">
+       <div data-aos="fade-up"
+       data-aos-duration="1000" className="flex ">
          <div className=" ">
             <div className="  rounded-lg">
   <figure><img src= {image_url} alt="Shoes" /></figure>

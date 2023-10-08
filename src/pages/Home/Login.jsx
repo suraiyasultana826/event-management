@@ -1,13 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { toast } from "react-toastify";
 
 const Login = () => {
-
-
-  
-
+  const [loginError, setLoginError] = useState('');
 
     const {signIn} = useContext(AuthContext);
 
@@ -27,10 +23,14 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             console.log(result.user);
+           
             navigate(location?.state ? location.state: '/');
+           
+            
         })
         .catch(error => {
             console.error(error);
+            setLoginError('Invalid Email or Password');
         })
     }
 
@@ -40,7 +40,7 @@ const Login = () => {
     .then((result) => {
       console.log(result.user);
       navigate(location?.state ? location.state: '/');
-      toast('Login successful!')
+      
     })
     .catch(error => {
       console.error(error);
@@ -72,9 +72,13 @@ const Login = () => {
             {/* <a href="#" className="label-text-alt link link-hover">Forgot password?</a> */}
           </label>
         </div>
-        <div className="form-control mt-6">
+        <div className="form-control ">
+        {
+    loginError && <p className="text-red-700 mb-2"> {loginError}</p>
+        }
           <button   className="btn btn-primary bg-blue-500 ">Login</button>
         </div>
+      
         
       </div></form>
       <div className="form-control pl-7 pr-7 pb-7">
@@ -85,9 +89,10 @@ const Login = () => {
       
     </div>
   </div>
+ 
 </div>
 
-            
+
         </div>
     );
 };

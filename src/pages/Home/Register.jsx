@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
+  const [regError, setRegError] = useState('')
     const {createUser} = useContext(AuthContext);
     
     const location = useLocation();
@@ -17,6 +18,21 @@ const Register = () => {
         const name = form.get('name')
         console.log(form);
         console.log(name, email, password);
+
+        if(password.length< 6){
+          setRegError('Password should be at least 6 characters or longer');
+          return;
+
+        }
+
+        else if(!/[A-Z]/.test(password)){
+          setRegError('Your Password should have at least a capital character');
+          return;
+        }
+        else if(!/[#?!@$%^&*-]]/.test(password)){
+          setRegError('Your Password should have at least a special  character');
+          return;
+        }
         //create user
         createUser(email, password)
         .then(result => {
@@ -60,6 +76,9 @@ const Register = () => {
             {/* <a href="#" className="label-text-alt link link-hover">Forgot password?</a> */}
           </label>
         </div>
+        {
+          regError && <p className="text-red-700">{regError}</p>
+        }
         <div className="form-control mt-6">
           <button className="btn btn-primary bg-blue-500 ">Register</button>
         </div>
