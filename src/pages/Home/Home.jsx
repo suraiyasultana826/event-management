@@ -2,6 +2,9 @@ import Header from "./Header";
 import banner from '../../assets/8107880.jpg'
 import { useLoaderData } from "react-router-dom";
 import EventCard from "./EventCard";
+import MiddilePart from "./MiddilePart";
+import ContactUs from "./ContactUs";
+
 
 const Home = () => {
     const event = useLoaderData();
@@ -18,9 +21,10 @@ const Home = () => {
            </div>
            </div>
           </div>
+          <MiddilePart></MiddilePart>
        
           
-         <div className="flex justify-center mb-20">
+         <div className="flex justify-center mb-20 mt-20">
          <p className="font-bold text-4xl text-blue-500">OUR SERVICES</p>
          </div>
          <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 py-10  ">
@@ -33,9 +37,8 @@ const Home = () => {
           
           
          </div>
-        
-           
-            
+         <ContactUs></ContactUs>
+      
         </div>
     );
 };

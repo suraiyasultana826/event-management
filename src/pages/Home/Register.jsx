@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { toast } from "react-toastify";
 
 const Register = () => {
-  const [regError, setRegError] = useState('')
+  
     const {createUser} = useContext(AuthContext);
+    const [regError, setRegError] = useState('');
     
     const location = useLocation();
     const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Register = () => {
           setRegError('Your Password should have at least a capital character');
           return;
         }
-        else if(!/[#?!@$%^&*-]]/.test(password)){
+        else if(!/[#?!@$%^&*-]/.test(password)){
           setRegError('Your Password should have at least a special  character');
           return;
         }
@@ -38,7 +38,7 @@ const Register = () => {
         .then(result => {
             console.log(result.user)
             navigate(location?.state ? location.state: '/');
-            toast("Registration Successful!");
+            
         })
         .catch(error => {
             console.error(error)

@@ -83,6 +83,12 @@ const Login = () => {
       </div></form>
       <div className="form-control pl-7 pr-7 pb-7">
           <button onClick={handleGoogle} className="btn btn-primary bg-pink-500 ">Google</button>
+          {/* {
+            user && <div>
+              <h1>{user.displayName}</h1>
+              <p>{user.email}</p>
+            </div>
+          } */}
         </div>
      
       <p className="text-center mb-8">Do not have an account? <Link className="font-bold text-blue-700" to='/register'>Register</Link></p>
